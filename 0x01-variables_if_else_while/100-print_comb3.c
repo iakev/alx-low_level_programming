@@ -18,8 +18,11 @@ int main(void)
 			{
 				putchar(base_16 + '0');
 				putchar(base_16_2 + '0');
-				putchar(',');
-				putchar(' ');
+				if (base_16 < 8)
+				{
+					putchar(',');
+					putchar(' ');
+				}
 			}
 			base_16_2++;
 		}
