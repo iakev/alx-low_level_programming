@@ -14,10 +14,10 @@ int main(void)
 	{
 		while (base_16_2 <= 9)
 		{
-			putchar(base_16 + '0');
-			putchar(base_16_2 + '0');
-			if (base_16 != 9 && base_16_2 != 8)
+			if (base_16_2 > base_16)
 			{
+				putchar(base_16 + '0');
+				putchar(base_16_2 + '0');
 				putchar(',');
 				putchar(' ');
 			}
