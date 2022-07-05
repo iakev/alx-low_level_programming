@@ -15,7 +15,7 @@ void print_alphabet_x10(void)
 
 		while (j < 26)
 		{
-			_putchar(string[i]);
+			_putchar(string[j]);
 			j++;
 		}
 		_putchar('\n');
