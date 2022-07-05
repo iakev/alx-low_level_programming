@@ -15,18 +15,23 @@ void times_table(void)
 	{
 		int col = 0;
 		int entry = 0;
+		int next_entry = 0;
 
 		while (col < 10)
 		{
 			entry = row * numbers[col];
-			if (col < 9)
+			next_entry = row * numbers[col+1];
+			if (next_entry < 10)
 			{
 				if (entry < 10)
 				{
 					_putchar(entry + '0');
-					_putchar(',');
-					_putchar(' ');
-					_putchar(' ');
+					if (col != 9)
+					{
+						_putchar(',');
+						_putchar(' ');
+						_putchar(' ');
+					}
 				}
 				else
 				{
@@ -34,8 +39,11 @@ void times_table(void)
 					last = entry % 10;
 					_putchar(first + '0');
 					_putchar(last + '0');
-					_putchar(',');
-					_putchar(' ');
+					if (col != 9)
+					{
+						_putchar(',');
+						_putchar(' ');
+					}
 				}
 			}
 			else
@@ -43,6 +51,11 @@ void times_table(void)
 				if (entry < 10)
 				{
 					_putchar(entry + '0');
+					if (col != 9)
+					{
+						_putchar(',');
+						_putchar(' ');
+					}
 				}
 				else
 				{
@@ -50,8 +63,12 @@ void times_table(void)
 					last = entry % 10;
 					_putchar(first + '0');
 					_putchar(last + '0');
+					if (col != 9)
+					{
+						_putchar(',');
+						_putchar(' ');
+					}
 				}
-
 			}
 			col++;
 		}
