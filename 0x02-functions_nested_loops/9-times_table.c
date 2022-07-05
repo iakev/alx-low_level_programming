@@ -1,4 +1,6 @@
 #include "main.h"
+void inner_loop_if(int ent, int c, int f, int l);
+void inner_loop_else(int ent, int c, int f, int l);
 /**
  * times_table - function to print the times_table upto 9
  *
@@ -20,56 +22,12 @@ void times_table(void)
 		while (col < 10)
 		{
 			entry = row * numbers[col];
-			next_entry = row * numbers[col+1];
+			next_entry = row * numbers[col + 1];
 			if (next_entry < 10)
-			{
-				if (entry < 10)
-				{
-					_putchar(entry + '0');
-					if (col != 9)
-					{
-						_putchar(',');
-						_putchar(' ');
-						_putchar(' ');
-					}
-				}
-				else
-				{
-					first = entry / 10;
-					last = entry % 10;
-					_putchar(first + '0');
-					_putchar(last + '0');
-					if (col != 9)
-					{
-						_putchar(',');
-						_putchar(' ');
-					}
-				}
-			}
+				inner_loop_if(entry, col, first,
+					      last);
 			else
-			{
-				if (entry < 10)
-				{
-					_putchar(entry + '0');
-					if (col != 9)
-					{
-						_putchar(',');
-						_putchar(' ');
-					}
-				}
-				else
-				{
-					first = entry / 10;
-					last = entry % 10;
-					_putchar(first + '0');
-					_putchar(last + '0');
-					if (col != 9)
-					{
-						_putchar(',');
-						_putchar(' ');
-					}
-				}
-			}
+				inner_loop_else(entry, col, first, last);
 			col++;
 		}
 		_putchar('\n');
