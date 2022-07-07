@@ -1,8 +1,10 @@
 #include "main.h"
+
 /**
- * more_numbers - fuction to print numbers from 0 to 14 ,followed by a newline 
- * using _putschar() 10 times.
- * Return: Nothing just print
+ * more_numbers - print numbers from 0 to 14 10 times using _putchar()
+ * 3 times only
+ *
+ * Return: nothing just print to the standard output stream
  */
 void more_numbers(void)
 {
