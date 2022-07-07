@@ -11,21 +11,19 @@
 int main(void)
 {
 	int j;
-	char *div_5 = "Buzz";
-	char *div_3 = "Fizz";
-	char *div_35 = "FizzBuzz";
 
 	for (j = 1; j < 101; j++)
 	{
 		if (j % 15 == 0)
-			printf("%s ", div_35);
+			printf("FizzBuzz ");
 		else if (j % 5 == 0)
-			printf("%s ", div_5);
+			printf("Buzz ");
 		else if (j % 3 == 0)
-			printf("%s ", div_3);
+			printf("Fizz ");
 		else
 			printf("%d ", j);
 	}
 	printf("\n");
+
 	return (0);
 }
