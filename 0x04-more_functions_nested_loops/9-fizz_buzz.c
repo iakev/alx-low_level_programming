@@ -17,7 +17,7 @@ int main(void)
 
 	for (j = 1; j < 101; j++)
 	{
-		if (j % 3 == 0  && j % 5 == 0)
+		if (j % 15 == 0)
 			printf("%s ", div_35);
 		else if (j % 5 == 0)
 			printf("%s ", div_5);
