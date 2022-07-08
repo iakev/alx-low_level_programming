@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int is_prime(int n);
+long int is_prime(long int n);
 /**
  * main - find and print the largest prime factor of 612852475143
  *
@@ -9,9 +9,9 @@ int is_prime(int n);
 int main(void)
 {
 	long int dividend = 612852475143;
-	int divisor = 2;
-	int quotient = 0;
-	int prime = 0;
+	long int divisor = 2;
+	long int quotient = 0;
+	long int prime = 0;
 
 	while (quotient != 1)
 	{
@@ -24,7 +24,7 @@ int main(void)
 		else
 			divisor++;
 	}
-	printf("%d\n", prime);
+	printf("%ld\n", prime);
 
 	return (0);
 }
@@ -36,11 +36,11 @@ int main(void)
  * Return: false if a number is not prime but return the prime number if a true
  * prime
  */
-int is_prime(int n)
+long int is_prime(long int n)
 {
-	const int false = 0;
-	int bool = 0;
-	int i;
+	const long int false = 0;
+	long int bool = 0;
+	long int i;
 
 	for (i = 1; i <= n; i++)
 	{

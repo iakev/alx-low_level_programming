@@ -14,14 +14,28 @@ int main(void)
 
 	for (j = 1; j < 101; j++)
 	{
-		if (j % 15 == 0)
-			printf("FizzBuzz ");
-		else if (j % 5 == 0)
-			printf("Buzz ");
-		else if (j % 3 == 0)
-			printf("Fizz ");
+		if (j == 100)
+		{
+			if (j % 15 == 0)
+				printf("FizzBuzz");
+			else if (j % 5 == 0)
+				printf("Buzz");
+			else if (j % 3 == 0)
+				printf("Fizz");
+			else
+				printf("%d", j);
+		}
 		else
-			printf("%d ", j);
+		{
+			if (j % 15 == 0)
+				printf("FizzBuzz ");
+			else if (j % 5 == 0)
+				printf("Buzz ");
+			else if (j % 3 == 0)
+				printf("Fizz ");
+			else
+				printf("%d ", j);
+		}
 	}
 	printf("\n");
 
