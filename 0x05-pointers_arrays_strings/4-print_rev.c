@@ -24,7 +24,7 @@ void print_rev(char *s)
 	while (len >= 0)
 	{
 		cha = *(s + len);
-		if ( cha != '\0')
+		if (cha != '\0')
 			_putchar(cha);
 		len--;
 	}
