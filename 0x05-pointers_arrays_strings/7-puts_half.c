@@ -24,7 +24,6 @@ void puts_half(char *str)
 	if (len % 2 == 0)
 	{
 		count = len / 2;
-		count++;
 	}
 	else
 		count = (len - 1) / 2;
