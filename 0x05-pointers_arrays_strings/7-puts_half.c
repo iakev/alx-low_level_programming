@@ -22,7 +22,10 @@ void puts_half(char *str)
 		len++;
 	}
 	if (len % 2 == 0)
+	{
 		count = len / 2;
+		count++;
+	}
 	else
 		count = (len - 1) / 2;
 	while (count < len)
