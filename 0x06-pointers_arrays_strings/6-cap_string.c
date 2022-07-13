@@ -6,9 +6,9 @@
  *
  * @str: string whose words to be capitalized.
  *
- * Return - a pointer to the modified string
+ * Return: a pointer to the modified string
  */
-char* string_toupper(char *str)
+char *cap_string(char *str)
 {
 	char *c_add;
 
@@ -22,5 +22,5 @@ char* string_toupper(char *str)
 		c_add++;
 	}
 
-	return s;
+	return (s);
 }
