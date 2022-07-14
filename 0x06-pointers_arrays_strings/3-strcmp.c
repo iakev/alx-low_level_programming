@@ -22,7 +22,7 @@ int _strcmp(char *s1, char *s2)
 		len = s2_len;
 	for (i = 0; i < len; i++)
 	{
-		if(s1[i] - s2[i] == 0)
+		if (s1[i] - s2[i] == 0)
 			continue;
 		else
 		{
@@ -31,7 +31,7 @@ int _strcmp(char *s1, char *s2)
 		}
 	}
 
-	return comp;
+	return (comp);
 }
 
 /**
