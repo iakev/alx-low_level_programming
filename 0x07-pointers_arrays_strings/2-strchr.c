@@ -1,5 +1,6 @@
 #include <stddef.h>
 #include "main.h"
+#include <string.h>
 
 /**
  * _strchr - function that returns a pointer to the first occurence of 'c' in
@@ -12,18 +13,20 @@
  */
 char *_strchr(char *s, char c)
 {
-	char *str;
+	int i, len;
 
-	str = s;
-	while (*str != '\0')
+	len = strlen(s);
+	for (i = 0; i <= len ; i++)
 	{
-		if (*str == c)
+		if (s[i] == c)
+		{
 			break;
-		str++;
+		}
 	}
-	if (*str == '\0')
+	if (s[i] == c)
 	{
-		return (str);
+		return (&s[i]);
 	}
-	return (str);
+	else
+		return (NULL);
 }
