@@ -13,26 +13,25 @@
  */
 void print_diagsums(int *a, int size)
 {
-	int row, col, i, j, diag1, diag2;
+	int i, diag1, diag2, count, count1;
 
-	col = size;
-	row = size;
+	count = count1 = 0;
 	diag1 = diag2 = 0;
-
-	for (i = 0; i < row; i++)
+	for (i = 0; i < (size * size); i++)
 	{
-		for (j = 0; j < col; j++)
+		if (i % size == 0)
 		{
-			if (i == j)
-			{
-				diag1 += a[i][j];
-			}
-			if ((i + j) == (size - 1))
-			{
-				diag2 += a[i][j];
-			}
+			diag1 += a[count + i];
+			count += 1;
+		}
+	}
+	for (i = 0; i <= (size * size); i++)
+	{
+		if (i % size == 0 && i != 0)
+		{
+			diag2 += a[(i - 1) - count1];
+			count1 += 1;
 		}
 	}
 	printf("%d, %d\n", diag1, diag2);
-
 }
