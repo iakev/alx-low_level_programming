@@ -18,6 +18,7 @@ void print_diagsums(int *a, int size)
 	col = size;
 	row = size;
 	diag1 = diag2 = 0;
+
 	for (i = 0; i < row; i++)
 	{
 		for (j = 0; j < col; j++)
@@ -33,4 +34,5 @@ void print_diagsums(int *a, int size)
 		}
 	}
 	printf("%d, %d\n", diag1, diag2);
+
 }
