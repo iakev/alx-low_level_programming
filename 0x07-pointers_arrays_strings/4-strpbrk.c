@@ -15,11 +15,11 @@
 char *_strpbrk(char *s, char *accept)
 {
 	unsigned long int i, j;
-	char *str = s;
+	char *str;
 
-	for (i = 0; i <= strlen(s) ; i++)
+	for (i = 0; i < strlen(s) ; i++)
 	{
-		for (j = 0; j <= strlen(accept); j++)
+		for (j = 0; j < strlen(accept); j++)
 		{
 			if (s[i] == accept[j])
 			{
@@ -28,12 +28,10 @@ char *_strpbrk(char *s, char *accept)
 			}
 		}
 		if (*str == accept[j])
-			break;
+		{
+			return (str);
+		}
 	}
-	if (s[i] == accept[j])
-	{
-		return (str);
-	}
-	else
-		return (NULL);
+
+	return (NULL);
 }
