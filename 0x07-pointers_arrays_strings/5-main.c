@@ -8,8 +8,8 @@
  */
 int main(void)
 {
-    char *s = "GeeksforGeeks";
-    char *f = "for";
+    char *s = "First, solve the problem. Then, write the code.";
+    char *f = "solve";
     char *t;
 
     t = _strstr(s, f);

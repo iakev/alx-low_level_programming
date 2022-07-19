@@ -1,7 +1,9 @@
 #include <stddef.h>
 #include "main.h"
 #include <string.h>
+#include <stdio.h>
 
+char *start_match(char * s, char *str);
 /**
  * _strstr - function that locates first occurence of substring 'needle' in
  * string 'haystack'
@@ -20,34 +22,50 @@ char *_strstr(char *haystack, char *needle)
 
 	s = haystack;
 	str = needle;
-	while (*s != '\0')
+	ans = start_match(s, needle);
+	printf("Now we found the start of a match %s\n", ans);
+	while (*str != '\0')
 	{
-		if (*s != needle[i])
+		if (*s == *str)
 		{
-			s++;
+			bool = 1;
+		}
+		else
+			bool = 0;
+		str++;
+		s++;
+	}
+	if (bool)
+		return (ans);
+	else
+	{
+		start_match(ans,needle);
+		ans = w
+	}
+}
+
+char *start_match(char *str, char *needle)
+{
+	int i = bool = 0;
+	char *ans = NULL;
+
+	while (*str != '\0')
+	{
+		if (*str != needle[i])
+		{
+			printf("haystack is %s\n", str);
+			str++;
 			continue;
 		}
 		else
 		{
-			ans = s;
-			while (*str != '\0')
-			{
-				if (*s == *str)
-				{
-					bool = 1;
-				}
-				else
-					bool = 0;
-				str++;
-				s++;
-			}
+			ans = str;
 		}
-		s = ans;
-		s++;
+	}
+	if (ans == needle[i])
+	{
+		return (ans);
 	}
 
-	if (bool)
-		return (ans);
-	else
-		return (NULL);
+	return (NULL);
 }
