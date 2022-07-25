@@ -1,6 +1,8 @@
 #include "main.h"
+
 int good_enough(int, int);
 int sqrt_recursive(int, int);
+int improve_guess(int, int);
 /**
  * _sqrt_recursion - returns the square root of 'n'
  *
@@ -35,7 +37,7 @@ int sqrt_recursive(int guess, int n)
 	}
 	else
 	{
-		return (sqrt_recursive(guess - 1, n));
+		return (sqrt_recursive(improve_guess(guess, n), n));
 	}
 }
 /**
@@ -48,5 +50,24 @@ int sqrt_recursive(int guess, int n)
 
 int good_enough(int guess, int n)
 {
-	return (n - (guess * guess) == 0);
+	return ((n - (guess * guess)) == 0);
+}
+/**
+ * improve_guess - improve the guess value
+ *
+ * @n: square root to be found of n
+ * @guess: interger to be checked
+ * Return: int representing  a  bool value if true or not
+ */
+
+int improve_guess(int guess, int n)
+{
+	if (guess * guess > n)
+	{
+		return (guess / 2);
+	}
+	else
+	{
+		return (guess + 1);
+	}
 }
