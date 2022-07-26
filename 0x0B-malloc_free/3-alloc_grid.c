@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
+void free_grid_on_failure(int **grid, int height);
 /**
  * alloc_grid - allocates memory for a 2D array of intergers
  *
@@ -25,7 +26,7 @@ int **alloc_grid(int width, int height)
 	{
 		grid[i] = malloc(sizeof(int) * width);
 	}
-	for (i=0; i < height; i++)
+	for (i = 0; i < height; i++)
 	{
 		if (grid[i] == NULL)
 		{
@@ -34,11 +35,7 @@ int **alloc_grid(int width, int height)
 	}
 	if (bool)
 	{
-		for (i = 0; i < height; i++)
-		{
-			free(grid[i]);
-		}
-		free(grid);
+		free_grid_on_failure(grid, height);
 		return (NULL);
 	}
 	for (i = 0; i < height; i++)
@@ -50,4 +47,19 @@ int **alloc_grid(int width, int height)
 	}
 
 	return (grid);
+}
+/**
+ * free_grid_on_failure - frees grid memory if malloc fails
+ *
+ * @grid: pointer to start of 2-D array
+ * @height: interger repping the height od the 2D array
+ * Return: Nothing
+ */
+void free_grid_on_failure(int **grid, int height)
+{
+	for (i = 0; i < height; i++)
+	{
+		free(grid[i]);
+	}
+	free(grid);
 }
