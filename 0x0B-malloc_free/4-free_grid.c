@@ -3,6 +3,7 @@
 /**
  * free_grid - free previously alocated grid
  *
+ * @grid: pointer to start of 2D-array
  * @height: interger repping the height of the 2D array
  * Return: nothing
  */
