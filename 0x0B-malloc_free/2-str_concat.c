@@ -21,6 +21,11 @@ char *str_concat(char *s1, char *s2)
 	{
 		return (NULL);
 	}
+	else if (strlen(str) == 0)
+	{
+		str = "";
+		return (str);
+	}
 	else
 	{
 		if (s1 == NULL)
@@ -68,6 +73,10 @@ char *allocate_mem(char *s1, char *s2, int *size1, int *size2)
 		*size1 = strlen(s1);
 		*size2 = strlen(s2) + 1;
 		str = malloc(sizeof(*s1) * (*size1 + *size2));
+	}
+	else if (s1 == NULL && s2 == NULL)
+	{
+		str = '\0';
 	}
 	else if (s1 == NULL)
 	{
