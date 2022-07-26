@@ -21,11 +21,6 @@ char *str_concat(char *s1, char *s2)
 	{
 		return (NULL);
 	}
-	else if (strlen(str) == 0)
-	{
-		str = "";
-		return (str);
-	}
 	else
 	{
 		if (s1 == NULL)
