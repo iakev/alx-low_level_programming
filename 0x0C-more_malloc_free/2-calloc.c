@@ -8,17 +8,23 @@
  */
 void *_calloc(unsigned int nmeb, unsigned int size)
 {
-	void *ptr, *arr;
+	unsigned int i;
+	void *ptr;
+	char *str;
 
 	if (size == 0 || nmeb == 0)
 	{
 		return (NULL);
 	}
-	ptr = malloc(nmeb * size);
-	if (ptr == NULL)
+	str = malloc(nmeb * size);
+	if (str == NULL)
 	{
 		return (NULL);
 	}
-	arr = memset(ptr, 0, nmeb);
-	return (arr);
+	for (i = 0; i < nmeb; i++)
+	{
+		str[i] = 0;
+	}
+	ptr = (void*) str;
+	return (ptr);
 }
