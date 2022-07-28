@@ -19,6 +19,6 @@ void *_calloc(unsigned int nmeb, unsigned int size)
 	{
 		return (NULL);
 	}
-	explicit_bzero(ptr, nmeb);
+
 	return (ptr);
 }
