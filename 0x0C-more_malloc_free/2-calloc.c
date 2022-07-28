@@ -8,23 +8,17 @@
  */
 void *_calloc(unsigned int nmeb, unsigned int size)
 {
-	unsigned int i;
 	void *ptr;
-	char *str;
 
 	if (size == 0 || nmeb == 0)
 	{
 		return (NULL);
 	}
-	str = malloc(nmeb * size);
-	if (str == NULL)
+	ptr = malloc(nmeb * size);
+	if (ptr == NULL)
 	{
 		return (NULL);
 	}
-	for (i = 0; i < nmeb; i++)
-	{
-		str[i] = 0;
-	}
-	ptr = (void *) str;
+	explicit_bzero(ptr, nmeb);
 	return (ptr);
 }
